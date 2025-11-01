@@ -4,9 +4,13 @@ What you’ll learn: least privilege, trust policies, short-lived creds, and saf
 
 ## ✅ Prerequisites
 -AWS account with IAM access (admin or equivalent)
+
 -AWS CLI v2 configured (recommended to use a dedicated profile)
+
 -A private bucket to test with
+
 -Basic bash
+
 -(Optional) CloudFormation familiarity
 
 ## 🧰 Variables (use placeholders — don’t hardcode secrets)
