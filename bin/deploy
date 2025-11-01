@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Load .env
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs)
+fi
+
+aws cloudformation deploy \
+  --template-file template.yaml \
+  --stack-name "$STACK_NAME" \
+  --capabilities CAPABILITY_IAM \
+  --parameter-overrides \
+      AccountId="$ACCOUNT_ID" \
+      UserName="$USER_NAME" \
+      RoleName="$ROLE_NAME" \
+      BucketName="$BUCKET_NAME" \
+  --profile "$AWS_PROFILE"
