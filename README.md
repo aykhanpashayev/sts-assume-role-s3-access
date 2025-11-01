@@ -53,6 +53,7 @@ aws configure --profile <YOUR_AWS_PROFILE>
 
 ## 2) Deploy the Role with CloudFormation
 2.1. First you will need a Template yaml or json file. I preferred yaml file you can check the file on root folder of repo.
+
 2.2. A script will be needed to execute you can find the script: /bin/deploy
 
 Tip: Make sure to make the deploy to executable:
@@ -129,9 +130,13 @@ aws iam delete-user --user-name "$USER_NAME" --profile "$AWS_PROFILE"
 
 ## 🔒 Security Notes
 -Never commit keys, tokens, or raw ARNs tied to your real identity.
+
 -Use placeholders like <ACCOUNT_ID>, <USER_NAME>, <ROLE_NAME>, <BUCKET_NAME>.
+
 -Prefer AWS named profiles over exporting long-lived access keys.
+
 -Limit S3 actions to exactly what you need (List/Get/Put/Delete in this demo).
+
 -Use short session durations in production roles.
 
 ## 🛠️ Troubleshooting (common real-world errors)
@@ -150,6 +155,9 @@ Your session token expired or you forgot to export AWS_SESSION_TOKEN. Re-assume 
 
 ## 🧠 What This Demonstrates
 -Temporary credentials via STS (reduced blast radius)
+
 -Principle of least privilege (bucket-scoped)
+
 -Infra as Code with CloudFormation
+
 -Clean, reproducible security demo with safe placeholders
